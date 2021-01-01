@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+int main() {
+    char wall = 186, up = 205, down = 205;
+
+    int i, contor = 1, acPoz;
+    int c = 1, k = 1;
+    bool full_runs = true;
+    bool start = true;
+    /// SNAKE FUNCTIONS
+    /// GRAFIC INTERFACE ///
+    while(start){
+        int area[2575];
+        int input, rand, y, formula, swipeElement;
+        cout << "Rand: "; cin >> rand;
+        cout << "Element axa Y: "; cin >> y;
+        cout << "Elemnt pentru inlocuire: "; cin >> swipeElement;
+        formula = (rand*99) - (99-y);
+        for(i = 1; i <= 2574; ++i) {
+            area[i] = c;
+            if(i == 99*k) {
+                k++;
+                ++c;
+                if(c == 10) {
+                    c = 1;
+                }
+            }
+        }
+        area[formula] = swipeElement;
+
+            ///movment///
+
+              /// PENTRU A PUNE SPATII IN POZITILE ANTERIOARE
+                /* BUG ZONE
+             area[clean_poz_body] = ' ', area[clean_poz_body2] = ' ', area[clean_poz_body] = ' ', area[clean_poz_cap]= ' ', area[clean_poz_coada1]= ' ' , area[clean_poz_coada2];
+            */
+            /////////////
+                    for(i = 1; i <= 101; ++i) { /// partea de sus
+                        cout << up;
+
+                    }
+                    cout << endl;
+                    /// mijlocs
+                        for(int z = 1; z <= 2574; ++z) { /// printam tot mijlocu
+                            if(full_runs) {
+                                cout << wall;
+                                full_runs = false;
+                            }
+                            cout << area[z];
+                            contor++;
+                            if(contor==100) {
+                                cout << wall << endl;
+                                contor = 1;
+                                full_runs = true;
+                            }
+                    }
+
+                    //// mijloc
+                    for(i = 1; i <= 101; ++i) { /// partea de jos
+                            cout << down;
+                     }
+            /// GRAFIC INTERFACE
+    }
+
+
+return 0;
+}
+
