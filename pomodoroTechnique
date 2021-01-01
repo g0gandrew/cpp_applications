@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int i, count = 0;
+    bool start = true, redo = true;
+    char sound = 7;
+    string input;
+    while(start) {
+      cout << "                                - [Pomodoro Technique] by Gog Andrew - " << endl;
+      cout << endl << endl;
+      cout <<  "Do you want a session of 2 hours, or of 4 hours? [first/second]: "; cin >> input;
+      if(input == "first") {
+          for(int i = 1; i <= 4; ++i) {
+            ++count;
+            cout << "[Step " << count << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
+            sleep(1500);
+            ++count;
+            cout << "[Step " << count << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
+            sleep(300);
+          }
+          cout << "Well done, you've finished a session of - 2 hours - \n";
+      }
+      else if(input == "second") {
+            for(int i = 1; i <= 8; ++i) {
+              ++count;
+              cout << "[Step " << count << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
+              sleep(1500);
+              ++count;
+              cout << "[Step " << count << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
+              sleep(300);
+            }
+          cout << "Well done, you've finished a session of - 4 hours - \n";
+      }
+      do {
+        cout << "Do you want to continue? [Y/N]: "; cin >> input;
+        if(input == "Y" || input == "y") {
+          redo = false;
+        }
+        else if(input == "n" || input == "N"){
+          cout << "[Gog Andrew] - Thanks for using this program, i hope it helps you.";
+          return 0;
+        }
+        else if(input != "n" || input != "N" || input != "Y" || input != "y") {
+            redo = true;
+        }
+      }while(redo == true);
+      system("CLS");
+      count = 0;
+}
+/* 
+Application developed by Gog Andrew.
+E-MAIL: gogandrew2020@gmail.com
+*/
+  return 0;
+}
