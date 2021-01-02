@@ -1,7 +1,9 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
+
 int main() {
-    int i, count = 0;
+    int i, steps = 0;
     bool start = true, redo = true;
     char sound = 7;
     string input;
@@ -11,23 +13,23 @@ int main() {
       cout <<  "Do you want a session of 2 hours, or of 4 hours? [first/second]: "; cin >> input;
       if(input == "first") {
           for(int i = 1; i <= 4; ++i) {
-            ++count;
-            cout << "[Step " << count << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
-            sleep(1500);
-            ++count;
-            cout << "[Step " << count << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
-            sleep(300);
+            ++steps;
+            cout << "[Step " << steps << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
+            Sleep(1500000);
+            ++steps;
+            cout << "[Step " << steps << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
+            Sleep(300000);
           }
           cout << "Well done, you've finished a session of - 2 hours - \n";
       }
       else if(input == "second") {
             for(int i = 1; i <= 8; ++i) {
-              ++count;
-              cout << "[Step " << count << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
-              sleep(1500);
-              ++count;
-              cout << "[Step " << count << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
-              sleep(300);
+              ++steps;
+              cout << "[Step " << steps << "]" << " The session has started, you have to work for  - 25 minutes -" << endl;
+              Sleep(1500000);
+              ++steps;
+              cout << "[Step " << steps << "]" << sound << " The session is done, you have a - 5 minutes break -"<< endl;
+              Sleep(300000);
             }
           cout << "Well done, you've finished a session of - 4 hours - \n";
       }
@@ -45,9 +47,9 @@ int main() {
         }
       }while(redo == true);
       system("CLS");
-      count = 0;
+      steps = 0;
 }
-/* 
+/*
 Application developed by Gog Andrew.
 E-MAIL: gogandrew2020@gmail.com
 */
